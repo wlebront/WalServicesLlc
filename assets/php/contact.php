@@ -14,16 +14,14 @@ $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
 $mail->SMTPAuth = true;
 
-
-$mail->Username = 'ramonemili15@gmail.com';
-$mail->Password = 'ewla zixa twmy wkcf';
-
+$mail->Username = 'william@walservicesllc.com';
+$mail->Password = '163106@Wlt';
 
 $mail->SMTPSecure = 'tls'; // tls o ssl
 $mail->Port = 587; // Puerto de SMTP
 
 //Set who the message is to be sent from
-$mail->setFrom('williamlebron23@hotmail.com','William');
+$mail->setFrom('william@walservicesllc.com','William');
 $mail->CharSet = 'UTF-8';
 $mail->isHTML(); 
 
@@ -38,7 +36,7 @@ $clientService =   $_POST['contact-service'];
 $mail->addReplyTo($clientEmail,$clientName);
 
 //Set who the message is to be sent to
-$mail->addAddress('wlebront@gmail.com', 'Wal Services');
+$mail->addAddress('william@walservicesllc.com', 'Wal Services');
 
 //Set description of the new email
 $mail->Subject = mb_convert_encoding('New Message From ' . $clientName, "UTF-8", "auto");
