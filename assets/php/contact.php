@@ -1,4 +1,10 @@
-<?php require("PHPMailer/PHPMailerAutoload.php");
+<?php 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: *");
+
+ECHO 'HELLO';
+
+require("PHPMailer/PHPMailerAutoload.php");
 
 // ADD your Email and Name
 $recipientEmail='williamlebron23@hotmail.com';
