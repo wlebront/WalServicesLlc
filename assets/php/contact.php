@@ -1,64 +1,63 @@
 <?php 
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: *");
+header("Access-Control-Allow-Methods: POST");
 
-ECHO 'HELLO';
+require("../vendor/autoload.php");
 
-require("PHPMailer/PHPMailerAutoload.php");
+use PHPMailer\PHPMailer\PHPMailer;
 
 // ADD your Email and Name
-$recipientEmail='williamlebron23@hotmail.com';
-$recipientName='William';
+$mail = new PHPMailer(true);
+$mail->isSMTP();
 
-//collect the posted variables into local variables before calling $mail = new mailer
 
-$senderName = $_POST['contact-name'];
-$senderPhone = $_POST['contact-phone'];
-$senderMessage= $_POST['contact-message'];
-$senderSubject = 'New Message From ' . $senderName;
+$mail->Host = 'smtp.gmail.com';
+$mail->SMTPAuth = true;
 
-//Create a new PHPMailer instance
-$mail = new PHPMailer();
+
+$mail->Username = 'ramonemili15@gmail.com';
+$mail->Password = 'ewla zixa twmy wkcf';
+
+
+$mail->SMTPSecure = 'tls'; // tls o ssl
+$mail->Port = 587; // Puerto de SMTP
 
 //Set who the message is to be sent from
-$mail->setFrom($recipientEmail, $recipientName);
+$mail->setFrom('williamlebron23@hotmail.com','William');
+$mail->CharSet = 'UTF-8';
+$mail->isHTML(); 
+
+//collect the posted variables into local variables before calling $mail = new mailer
+$clientName = $_POST['contact-name'];
+$clientPhone =  $_POST['contact-phone'];
+$clientMessage= $_POST['contact-message'];
+$clientEmail =   $_POST['contact-email'];
+$clientService =   $_POST['contact-service'];
+
 //Set an alternative reply-to address
-$mail->addReplyTo($senderEmail,$senderName);
+$mail->addReplyTo($clientEmail,$clientName);
+
 //Set who the message is to be sent to
-$mail->addAddress($senderEmail, $senderName );
-//Set the subject line
-$mail->Subject = $senderSubject;
+$mail->addAddress('wlebront@gmail.com', 'Wal Services');
 
-$mail->Body = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
-
-$mail->MsgHTML($body);
-$mail->AddAddress($recipientEmail, $recipientName);
-
-//$mail-&gt;AddAttachment("images/phpmailer.gif"); // attachment
-//$mail-&gt;AddAttachment("images/phpmailer_mini.gif"); // attachment
+//Set description of the new email
+$mail->Subject = mb_convert_encoding('New Message From ' . $clientName, "UTF-8", "auto");
 
 //now make those variables the body of the emails
 $message = '<html><body>';
 $message .= '<table rules="all" style="border:1px solid #666;width:300px;" cellpadding="10">';
-$message .= ($senderName) ? "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $senderName . "</td></tr>" : '';
-$message .= ($senderEmail) ?"<tr><td><strong>Email:</strong> </td><td>" . $senderEmail . "</td></tr>" : '';
-$message .= ($senderPhone) ?"<tr><td><strong>Phone:</strong> </td><td>" . $senderPhone . "</td></tr>" : '';
-$message .= ($senderMessage) ?"<tr><td><strong>Email:</strong> </td><td>" . $senderMessage . "</td></tr>" : '';
-
+$message .= ($clientName) ? "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $clientName . "</td></tr>" : '';
+$message .= ($clientEmail) ?"<tr><td><strong>Email:</strong> </td><td>" . $clientEmail . "</td></tr>" : '';
+$message .= ($clientPhone) ?"<tr><td><strong>Phone:</strong> </td><td>" . $clientPhone . "</td></tr>" : '';
+$message .= ($clientMessage) ?"<tr><td><strong>Message:</strong> </td><td>" . $clientMessage . "</td></tr>" : '';
+$message .= ($clientService) ?"<tr><td><strong>Service:</strong> </td><td>" . $clientService . "</td></tr>" : '';
 $message .= "</table>";
 $message .= "</body></html>";
 
 $mail->Body = $message;
 
-// $mail->Body="
-// Name:$senderName<br/>
-// Email: $senderEmail<br/>
-// Suburb: $senderSubject<br/>
-// Message: $senderMessage";
+if(!$mail->Send()) 
+{ echo '<div class="alert alert-danger" role="alert">Error: '. $mail->ErrorInfo.'</div>'; } 
+else { echo '<div class="alert alert-success" role="alert">Thank you. We will contact you shortly.</div>';}
 
-if(!$mail->Send()) {
-	echo '<div class="alert alert-danger" role="alert">Error: '. $mail->ErrorInfo.'</div>';
-} else {
-	echo '<div class="alert alert-success" role="alert">Thank you. We will contact you shortly.</div>';
-}
 ?>
