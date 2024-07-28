@@ -1,61 +1,75 @@
-<?php 
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
+<?php
+/*
+ *  CONFIGURE EVERYTHING HERE
+ */
 
-require("../vendor/autoload.php");
+// an email address that will be in the From field of the email.
+$from = 'Demo contact form <william@walservicesllc.com>';
 
-use PHPMailer\PHPMailer\PHPMailer;
+// an email address that will receive the email with the output of the form
+$sendTo = 'Demo contact form <test@walservicesllc.com>';
 
-// ADD your Email and Name
-$mail = new PHPMailer(true);
-$mail->isSMTP();
+// subject of the email
+$subject = 'New message from contact form';
+
+// form field names and their translations.
+// array variable name => Text to appear in the email
+$fields = array('contact-name' => 'Contact-name', 'contact-email' => 'Contact-email', 'contact-phone' => 'Contact-phone', 'contact-service' => 'Contact-service', 'contact-message' => 'Contact-message'); 
+
+// message that will be displayed when everything is OK :)
+$okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
+
+// If something goes wrong, we will display this message.
+$errorMessage = 'There was an error while submitting the form. Please try again later';
+
+/*
+ *  LET'S DO THE SENDING
+ */
+
+// if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
+error_reporting(E_ALL & ~E_NOTICE);
+
+try
+{
+
+    if(count($_POST) == 0) throw new \Exception('Form is empty');
+            
+    $emailText = "You have a new message from your contact form\n=============================\n";
+
+    foreach ($_POST as $key => $value) {
+        // If the field exists in the $fields array, include it in the email 
+        if (isset($fields[$key])) {
+            $emailText .= "$fields[$key]: $value\n";
+        }
+    }
+
+    // All the neccessary headers for the email.
+    $headers = array('Content-Type: text/plain; charset="UTF-8";',
+        'From: ' . $from,
+        'Reply-To: ' . $from,
+        'Return-Path: ' . $from,
+    );
+    
+    // Send email
+    mail($sendTo, $subject, $emailText, implode("\n", $headers));
+
+    $responseArray = array('type' => 'success', 'message' => $okMessage);
+}
+catch (\Exception $e)
+{
+    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
+}
 
 
-$mail->Host = 'smtp.gmail.com';
-$mail->SMTPAuth = true;
+// if requested by AJAX request return JSON response
+if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    $encoded = json_encode($responseArray);
 
-$mail->Username = 'william@walservicesllc.com';
-$mail->Password = '163106@Wlt';
+    header('Content-Type: application/json');
 
-$mail->SMTPSecure = 'tls'; // tls o ssl
-$mail->Port = 587; // Puerto de SMTP
-
-//Set who the message is to be sent from
-$mail->setFrom('william@walservicesllc.com','William');
-$mail->CharSet = 'UTF-8';
-$mail->isHTML(); 
-
-//collect the posted variables into local variables before calling $mail = new mailer
-$clientName = $_POST['contact-name'];
-$clientPhone =  $_POST['contact-phone'];
-$clientMessage= $_POST['contact-message'];
-$clientEmail =   $_POST['contact-email'];
-$clientService =   $_POST['contact-service'];
-
-//Set an alternative reply-to address
-$mail->addReplyTo($clientEmail,$clientName);
-
-//Set who the message is to be sent to
-$mail->addAddress('william@walservicesllc.com', 'Wal Services');
-
-//Set description of the new email
-$mail->Subject = mb_convert_encoding('New Message From ' . $clientName, "UTF-8", "auto");
-
-//now make those variables the body of the emails
-$message = '<html><body>';
-$message .= '<table rules="all" style="border:1px solid #666;width:300px;" cellpadding="10">';
-$message .= ($clientName) ? "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $clientName . "</td></tr>" : '';
-$message .= ($clientEmail) ?"<tr><td><strong>Email:</strong> </td><td>" . $clientEmail . "</td></tr>" : '';
-$message .= ($clientPhone) ?"<tr><td><strong>Phone:</strong> </td><td>" . $clientPhone . "</td></tr>" : '';
-$message .= ($clientMessage) ?"<tr><td><strong>Message:</strong> </td><td>" . $clientMessage . "</td></tr>" : '';
-$message .= ($clientService) ?"<tr><td><strong>Service:</strong> </td><td>" . $clientService . "</td></tr>" : '';
-$message .= "</table>";
-$message .= "</body></html>";
-
-$mail->Body = $message;
-
-if(!$mail->Send()) 
-{ echo '<div class="alert alert-danger" role="alert">Error: '. $mail->ErrorInfo.'</div>'; } 
-else { echo '<div class="alert alert-success" role="alert">Thank you. We will contact you shortly.</div>';}
-
-?>
+    echo $encoded;
+}
+// else just display the message
+else {
+    echo $responseArray['message'];
+}
