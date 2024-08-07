@@ -258,11 +258,11 @@
        page title 
     =========================== -->
     <section class="page-title-layout2 page-title-light bg-overlay bg-parallax">
-      <div class="bg-img"><img src="assets/images/page-titles/9.jpg" alt="background"></div>
+      <div class="bg-img"><img src="assets/images/sliders/clean2.jpg" alt="background"></div>
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8">
-            <h1 class="pagetitle__heading">Providing Quality Janitorial & Cleaning Services For People.</h1>
+            <h1 class="pagetitle__heading">Providing Quality Cleaning Services Across Rhode Island</h1>
             <p class="pagetitle__desc">Our cleaning experts deliver the highest quality of clean you can always count,
               let us help you with all of your cleaning and disinfecting responsibilities now.</p>
             <div class="d-flex flex-wrap align-items-center">
@@ -667,58 +667,14 @@
         <div class="row">
           <div class="col-12 text-center">
             <p class="text__link mt-40 mb-0">Dedicated team of trained specialist.
-              <a href="team.html" class="btn btn__secondary btn__link mx-1">
-                <span>Meet Our Experts</span> <i class="icon-arrow-right"></i>
+              <a href="contact-us.html" class="btn btn__secondary btn__link mx-1">
+                <span>Contact Us For More Information</span> <i class="icon-arrow-right"></i>
               </a>
             </p>
           </div><!-- /.col-12 -->
         </div><!-- /.row -->
       </div><!-- /.container -->
     </section><!-- /.Work Process layout 2 -->
-
-    <!-- ======================
-     Clients
-    ========================= -->
-    <section class="clients pt-50 pb-50 border-top">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-12">
-            <div class="slick-carousel"
-              data-slick='{"slidesToShow": 6, "arrows": false, "dots": false, "autoplay": true,"autoplaySpeed": 2000, "infinite": true, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 4}}, {"breakpoint": 767, "settings": {"slidesToShow": 2}}, {"breakpoint": 480, "settings": {"slidesToShow": 2}}]}'>
-              <div class="client">
-                <img src="assets/images/clients/1.png" alt="client">
-                <img src="assets/images/clients/1.png" alt="client">
-              </div><!-- /.client -->
-              <div class="client">
-                <img src="assets/images/clients/2.png" alt="client">
-                <img src="assets/images/clients/2.png" alt="client">
-              </div><!-- /.client -->
-              <div class="client">
-                <img src="assets/images/clients/3.png" alt="client">
-                <img src="assets/images/clients/3.png" alt="client">
-              </div><!-- /.client -->
-              <div class="client">
-                <img src="assets/images/clients/4.png" alt="client">
-                <img src="assets/images/clients/4.png" alt="client">
-              </div><!-- /.client -->
-              <div class="client">
-                <img src="assets/images/clients/5.png" alt="client">
-                <img src="assets/images/clients/5.png" alt="client">
-              </div><!-- /.client -->
-              <div class="client">
-                <img src="assets/images/clients/6.png" alt="client">
-                <img src="assets/images/clients/6.png" alt="client">
-              </div><!-- /.client -->
-              <div class="client">
-                <img src="assets/images/clients/7.png" alt="client">
-                <img src="assets/images/clients/7.png" alt="client">
-              </div><!-- /.client -->
-            </div><!-- /.carousel -->
-          </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
-      </div><!-- /.container -->
-    </section><!-- /.Clients -->
-
     <!-- ==========================
         contact layout 2
     =========================== -->
@@ -728,104 +684,75 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-7">
             <div class="contact-panel">
-              <form class="contact-panel__form" method="post" action="assets/php/contact.php" id="contactForm">
+              <form class="contact-panel__form" method="POST" action="assets/php/contact.php" id="contactForm">
                 <div class="row">
                   <div class="col-sm-12">
-                    <h4 class="contact-panel__title">Request An Estimate</h4>
-                    <p class="contact-panel__desc mb-30">For a cleaning that meets your highest standards, you need a
-                      dedicated team of trained specialists with all supplies needed to thoroughly clean your home.
+                    <h4 class="contact-panel__title">Get In Touch</h4>
+                    <p class="contact-panel__desc mb-30">We take great pride in everything that we do, control over
+                      products allows us to ensure customers receive the best quality service and highest standards, you
+                      need a dedicated team of specialists.
                     </p>
                   </div>
                   <div class="col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
-                      <label for="service">Choose your service</label>
-                      <select id="service" class="form-control">
-                        <option>Coronavirus Cleaning</option>
-                        <option>outdoor Cleaning</option>
-                        <option>indoor Cleaning</option>
-                      </select>
+                      <input type="text" class="form-control" placeholder="Name" id="contact-name" name="contact-name"
+                        required>
                     </div>
                   </div><!-- /.col-lg-6 -->
                   <div class="col-sm-6 col-md-6 col-lg-6">
                     <div class="form-group">
-                      <label for="type">Indicate type of cleaning</label>
-                      <select id="type" class="form-control">
-                        <option>Weekly Regular</option>
-                        <option>Monthly Regular</option>
+                      <input type="email" class="form-control" placeholder="Email" id="contact-email"
+                        name="contact-email" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-4 col-md-6 col-lg-4">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Phone" id="contact-Phone"
+                        name="contact-phone" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-4 col-md-6 col-lg-4">
+                    <div class="form-group">
+                      <select class="form-control" name="contact-industry" required>
+                          <option value="0">Industry</option>
+                          <option value="1">Officce</option>
+                          <option value="2">Medical Centres</option>
+                          <option value="3">Aged Care Centers</option>
+                          <option value="4">Shopping Centers and Stores</option>
+                          <option value="5">Childcare Center Cleaning Services</option>
+                          <option value="6">Restaurant Cleaning Services</option>
+                          <option value="7">School and University</option>
+                          <option value="8">Gym and Sports Centres</option>
+                          <option value="9">Display Homes</option>
+                          <option value="10">Factory and Warehouse</option>
                       </select>
                     </div>
                   </div><!-- /.col-lg-6 -->
-                  <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="col-sm-4 col-md-6 col-lg-4">
                     <div class="form-group">
-                      <label for="facility">Facility type</label>
-                      <select id="facility" class="form-control">
-                        <option>Educational</option>
-                        <option>Educational</option>
+                      <select class="form-control" name="contact-service" required>
+                          <option value="0">Service</option>
+                          <option value="1">Commercial Cleaning</option>
+                          <option value="2">Office Cleaning Services</option>
+                          <option value="3">Industrial Cleaning</option>
+                          <option value="4">Meat/Food Processing & Abattoir Cleaning</option>
+                          <option value="5">Construction Sites Cleaning</option>
+                          <option value="6">Regular Cleaning</option>
+                          <option value="7">Deep Cleaning Service</option>
+                          <option value="8">Fogging & Sanitization</option>
+                          <option value="9">High Pressure Cleaning</option>
+                          <option value="10">Hospitality Cleaning</option>
+                          <option value="11">Others</option>
                       </select>
                     </div>
                   </div><!-- /.col-lg-6 -->
-                  <div class="col-sm-6 col-md-6 col-lg-6">
-                    <div class="form-group">
-                      <label for="facilityName">Facility name</label>
-                      <input type="text" class="form-control" placeholder="7oroof" id="facilityName">
-                    </div>
-                  </div><!-- /.col-lg-6 -->
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label for="rooms">Room(s)?</label>
-                      <div class="position-relative">
-                        <button class="decrease-qty">
-                          <i class="fas fa-caret-down"></i>
-                        </button>
-                        <input type="number" value="5" class="form-control input-number" id="rooms">
-                        <button class="increase-qty">
-                          <i class="fas fa-caret-up"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div><!-- /.col-lg-4 -->
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label for="hallway">Hallway(s)? </label>
-                      <div class="position-relative">
-                        <button class="decrease-qty">
-                          <i class="fas fa-caret-down"></i>
-                        </button>
-                        <input type="number" value="2" class="form-control input-number" id="hallway">
-                        <button class="increase-qty">
-                          <i class="fas fa-caret-up"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div><!-- /.col-lg-4 -->
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <label for="staircase">Staircase(s)?</label>
-                      <div class="position-relative">
-                        <button class="decrease-qty">
-                          <i class="fas fa-caret-down"></i>
-                        </button>
-                        <input type="number" value="5" class="form-control input-number" id="staircase">
-                        <button class="increase-qty">
-                          <i class="fas fa-caret-up"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div><!-- /.col-lg-4 -->
                   <div class="col-12">
                     <div class="form-group">
-                      <label>Do you have all the necessary cleaning supplies?</label>
-                      <div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="yes" name="radioGroup" class="custom-control-input" value="Yes"
-                            checked>
-                          <label class="custom-control-label" for="yes">Yes</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                          <input type="radio" id="no" name="radioGroup" class="custom-control-input" value="No">
-                          <label class="custom-control-label" for="no">No</label>
-                        </div>
-                      </div>
+                      <textarea class="form-control" placeholder="Additional Details" id="contact-message"
+                        name="contact-message"></textarea>
+                    </div>
+                    <div class="col-12"> 
+                      <div class="mb-3" data-netlify-recaptcha="true"></div>
                     </div>
                     <button type="submit"
                       class="btn btn__secondary btn__block btn__xhight d-flex justify-content-between mt-10">
@@ -837,25 +764,17 @@
               </form>
             </div>
           </div><!-- /.col-lg-7 -->
-          <div class="col-sm-12 col-md-12 col-lg-5 d-flex flex-column justify-content-between">
+          <div class="col-sm-12 col-md-12 col-lg-5 d-flex flex-column">
             <div>
-              <div class="heading-layout2 heading-light mb-40">
+              <div class="heading-layout2 heading-light mb-100">
                 <h2 class="heading__subtitle">We’re the Best Cleaning Company</h2>
                 <h3 class="heading__title">Your Clients & Employees Deserve A Clean, Safe And Healthy Environment!!</h3>
-                <p class="heading__desc">Hiring someone to clean your home can feel like a big decision as you want to
-                  hire the best house cleaning service you can.</p>
+                <p class="heading__desc">Hiring someone to clean your Store / Factory can feel like a big decision as you want to hire the best house cleaning service you can.</p>
               </div><!-- /.heading -->
-              <div class="d-flex flex-wrap mb-70">
-                <a href="services.html" class="btn btn__white mr-30">
-                  <span>Explore More</span>
-                  <i class="icon-arrow-right ml-20"></i>
-                </a>
-                <a href="shop.html" class="btn btn__white btn__outlined">Our Products</a>
-              </div>
             </div>
             <div class="fancyboxs-layout1 fancybox-light">
               <div class="slick-carousel carousel-dots-light"
-                data-slick='{"slidesToShow": 1, "arrows": false, "dots": true, "autoplay": false,"autoplaySpeed": 2000, "infinite": true}'>
+                data-slick='{"slidesToShow": 1, "arrows": false, "dots": true, "autoplay": true,"autoplaySpeed": 2000, "infinite": true}'>
                 <div class="fancybox-item mb-0">
                   <div class="fancybox__icon">
                     <i class="icon-hanger"></i>
@@ -983,22 +902,8 @@
             </div><!-- /.feature-item -->
           </div><!-- /.col-lg-3 -->
         </div><!-- /.row -->
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
-            <p class="text__link text-center mb-0">For a cleaning that meets your highest standards, you need a
-              dedicated team of
-              trained specialists. We arrive at each visit with all supplies needed to thoroughly clean your home with
-              our extensive Cleaning Process.
-              <a href="services.html" class="btn btn__secondary btn__link mx-1">
-                <span>Contact Us For More Information</span> <i class="icon-arrow-right color-primary"></i>
-              </a>
-            </p>
-          </div><!-- /.col-lg-6 -->
-        </div><!-- /.row -->
       </div><!-- /.container -->
     </section><!-- /.feature-layout1 -->
-
-
     <!-- ========================
       Footer
     ========================== -->

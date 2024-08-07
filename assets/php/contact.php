@@ -14,7 +14,7 @@ $subject = 'New message from contact form';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('contact-name' => 'Contact-name', 'contact-email' => 'Contact-email', 'contact-phone' => 'Contact-phone', 'contact-service' => 'Contact-service', 'contact-message' => 'Contact-message'); 
+$fields = array('contact-name' => 'Contact-name', 'contact-email' => 'Contact-email', 'contact-phone' => 'Contact-phone', 'contact-service' => 'Contact-service', 'contact-industry' => 'Contact-industry','contact-message' => 'Contact-message'); 
 
 // message that will be displayed when everything is OK :)
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
