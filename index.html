@@ -156,7 +156,8 @@
             </ul><!-- /.navbar-nav -->
           </div><!-- /.navbar-collapse -->
           <ul class="navbar-actions d-none d-xl-flex align-items-center list-unstyled mb-0">
-            <li><a href="https://walservicesllc.azurewebsites.net/" class="btn btn__primary action__btn-request">Login Costumer </a>
+            <li><button class="action__btn-search"><i class="icon-search"></i></button></li>
+            <li><a href="request-estimate.html" class="btn btn__primary action__btn-request">Request An Estimate </a>
             </li>
           </ul>
         </div><!-- /.container -->
@@ -290,7 +291,7 @@
                     <div class="cta__icon">
                       <i class="icon-soap"></i>
                     </div>
-                    <p class="cta__desc">Our housekeepers will always arrive with your customized cleaning plan in hand
+                    <p class="cta__desc">Our team will always arrive with your customized cleaning plan in hand
                       to help.
                     </p>
                   </div>
@@ -363,7 +364,7 @@
                   </div><!-- /.service__icon -->
                   <h4 class="service__title">Recurring & Ongoing Cleaning Service</h4>
                   <p class="service__desc">With recurring service you will never have to worry about the unexpected and
-                    your home will be clean and ready, recurring service will get your home tidy so you enjoy your...
+                    your company will be clean and ready, recurring service will get your company tidy so you enjoy your...
                   </p>
                   <a href="services-single.html" class="btn btn__secondary btn__block d-flex justify-content-between">
                     <span>Read More</span>
@@ -745,7 +746,7 @@
           <div class="col-12">
             <div class="carousel-container">
               <div class="slick-carousel carousel-arrows-light carousel-dots-light"
-                data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "autoplay": false, "arrows": true, "dots": true, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2,"slidesToScroll": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 1,"slidesToScroll": 1}}, {"breakpoint": 480, "settings": {"slidesToShow": 1,"slidesToScroll": 1}}]}'>
+                data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "autoplay": true, "arrows": true, "dots": true, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2,"slidesToScroll": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 1,"slidesToScroll": 1}}, {"breakpoint": 480, "settings": {"slidesToShow": 1,"slidesToScroll": 1}}]}'>
                 <!-- portfolio Item #1 -->
                 <div class="portfolio-item">
                   <div class="portfolio__img">
@@ -942,7 +943,131 @@
     <!-- ==========================
         contact layout 3
     =========================== -->
-  
+    <section class="contact-layout3 bg-overlay bg-overlay-secondary-gradient">
+      <div class="bg-img"><img src="assets/images/banners/6.jpg" alt="banner"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5 d-flex flex-column justify-content-between">
+            <div>
+              <div class="heading-layout2 heading-light mb-40">
+                <h3 class="heading__title">Take Back Your Time And Leave The Cleaning To The Best Cleaning Experts.</h3>
+                <p class="heading__desc">Hiring someone to clean your company can feel like a big decision as you want to
+                  hire the best commercial cleaning service you can. So, we gathered some details about professional cleaning
+                  franchises to help you!</p>
+              </div><!-- /.heading -->
+              <div class="d-flex align-items-center flex-wrap mb-70">
+                <a href="request-estimate.html" class="btn btn__white mr-30">
+                  <span>Schedule A Visit</span>
+                  <i class="icon-arrow-right ml-20"></i>
+                </a>
+                <a href="tel:00201061245741" class="phone__number d-flex align-items-center">
+                  <img src="assets/images/icons/phone.png" alt="phone">
+                  <div class="ml-20">
+                    <span class="color-white d-block">(401) 699-5107</span>
+                    <span class="color-white fz-14 font-weight-normal">Call 24HR / 7Days</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="fancyboxs-layout1 fancybox-light">
+              <div class="fancybox-item mb-0">
+                <div class="fancybox__icon">
+                  <i class="icon-bucket"></i>
+                </div><!-- /.fancybox__icon -->
+                <div class="fancybox__body">
+                  <h4 class="fancybox__title">We're hiring</h4>
+                  <p class="fancybox__desc"> We offers you an opportunity to be a part of a rapidly growing Commercial
+                    cleaning industry. When you join us, you are building a bright and secure future. </p>
+                  <a href="request-estimate.html" class="btn btn__white btn__link">
+                    <i class="icon-arrow-right icon-filled"></i>
+                    <span>Request More Information</span>
+                  </a>
+                </div><!-- /.feature__body -->
+              </div><!-- /.feature-item -->
+            </div>
+          </div><!-- /.col-lg-5 -->
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-7">
+            <div class="contact-panel">
+              <div class="contact-panel__header bg-overlay bg-overlay-accent-gradient">
+                <div class="bg-img"><img src="assets/images/banners/4.jpg" alt="banner"></div>
+                <h4 class="contact-panel__title mb-0">Request An Estimate</h4>
+              </div>
+              <form class="contact-panel__form" method="POST" action="assets/php/contact.php" id="contactForm">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Name" id="contact-name" name="contact-name"
+                        required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <input type="email" class="form-control" placeholder="Email" id="contact-email"
+                        name="contact-email" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-4 col-md-6 col-lg-4">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Phone" id="contact-Phone"
+                        name="contact-phone" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-4 col-md-6 col-lg-4">
+                    <div class="form-group">
+                      <select class="form-control" name="contact-industry" required>
+                          <option value="0">Industry</option>
+                          <option value="1">Officce</option>
+                          <option value="2">Medical Centres</option>
+                          <option value="3">Aged Care Centers</option>
+                          <option value="4">Shopping Centers and Stores</option>
+                          <option value="5">Childcare Center Cleaning Services</option>
+                          <option value="6">Restaurant Cleaning Services</option>
+                          <option value="7">School and University</option>
+                          <option value="8">Gym and Sports Centres</option>
+                          <option value="9">Display Homes</option>
+                          <option value="10">Factory and Warehouse</option>
+                      </select>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-4 col-md-6 col-lg-4">
+                    <div class="form-group">
+                      <select class="form-control" name="contact-service" required>
+                          <option value="0">Service</option>
+                          <option value="1">Commercial Cleaning</option>
+                          <option value="2">Office Cleaning Services</option>
+                          <option value="3">Industrial Cleaning</option>
+                          <option value="4">Meat/Food Processing & Abattoir Cleaning</option>
+                          <option value="5">Construction Sites Cleaning</option>
+                          <option value="6">Regular Cleaning</option>
+                          <option value="7">Deep Cleaning Service</option>
+                          <option value="8">Fogging & Sanitization</option>
+                          <option value="9">High Pressure Cleaning</option>
+                          <option value="10">Hospitality Cleaning</option>
+                          <option value="11">Others</option>
+                      </select>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-12">
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="Additional Details" id="contact-message"
+                        name="contact-message"></textarea>
+                    </div>
+                    <div class="col-12"> 
+                      <div class="mb-3" data-netlify-recaptcha="true"></div>
+                    </div>
+                    <button type="submit"
+                      class="btn btn__secondary btn__block btn__xhight d-flex justify-content-between mt-10">
+                      <span>Submit Request</span> <i class="icon-arrow-right icon-outlined"></i>
+                    </button>
+                    <div class="contact-result"></div>
+                  </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+              </form>
+            </div>
+          </div><!-- /.col-lg-7 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.contact layout 3 -->
 
     <!-- ======================
       Blog Grid
